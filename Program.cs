@@ -12,7 +12,7 @@ namespace foo {
             // Console.WriteLine($"Nome: {nome}");
 
             static string processInput(string input) => input.Length > 0 ? input : "";
-            Func<string, int> stoi = input => input.Length > 0 ? int.Parse(input) : (int)0;
+            Func<string, int> stoi = input => input.Length > 0 ? Convert.ToInt32(input) : (int)0;
 
             int idade = stoi(processInput(Console.ReadLine()));
 
