@@ -17,3 +17,7 @@ dotnet run --arch "amd64" --os "linux" --project "csharp.csproj"
 ```sh
 dotnet run --no-build --no-restore --arch "amd64" --os "linux" --project "csharp.csproj"
 ```
+
+```sh
+dotnet test csharp.csproj
+```

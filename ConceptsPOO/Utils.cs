@@ -30,10 +30,9 @@ namespace utils
                 return false;
             }
 
-            int cont = 3;
             double sqrtX = Math.Sqrt(x);
 
-            while (cont <= sqrtX)
+            for (int cont=3; cont <= sqrtX; cont += 2)
             {
                 if (x % cont == 0)
                 {
@@ -41,8 +40,6 @@ namespace utils
                     Console.WriteLine($"Because the remainder of {x} divided by {cont} is 0");
                     return false;
                 }
-
-                cont += 2;
             }
 
             Console.WriteLine("YOU FOUND A PRIME NUMBER!!!");
