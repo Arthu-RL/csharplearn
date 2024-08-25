@@ -12,7 +12,7 @@ namespace calc {
             _capacity += amount;
         }
 
-        static public void CheckCapacity (int capacity) {
+        public static void CheckCapacity (int capacity) {
             if (capacity >= 20) {
                 Console.WriteLine("Good capacity by the way.");
             } else {
