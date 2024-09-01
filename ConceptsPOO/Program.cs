@@ -6,46 +6,42 @@ using utils;
 namespace foo {
     public class Program {
         static void Main(string[] args) {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Informe a opção desejada");
+            Console.WriteLine("0) Sair");
+            Console.WriteLine("1) Somar números");
+            Console.WriteLine("2) Verificar Primo");
+            Console.WriteLine("3) Inválido");
+            Console.WriteLine("4) Inválido");
+            Console.WriteLine("5) Inválido");
+            Console.WriteLine("6) Inválido");
 
-            // string? nome = Console.ReadLine();
+            while (true) {
+                int op = Utils.stoi(Utils.processInput(Console.ReadLine()));
 
-            // Console.WriteLine($"Nome: {nome}");
+                if (op == 0)
+                    break;
 
-            int num = Utils.stoi(Utils.processInput(Console.ReadLine()));
-
-            int[] multiples = new int[10];
-            // int index = 0;
-            for (int i = 2; i < multiples.Length; i++) {
-                if (num % i == 0) {
-                    multiples[i] = i;
+                switch (op) {
+                    case 1:
+                        {
+                            Console.WriteLine("Entrar com dois números para soma: ");
+                            int x = Utils.stoi(Utils.processInput(Console.ReadLine()));
+                            int y = Utils.stoi(Utils.processInput(Console.ReadLine()));
+                            Console.WriteLine($"Soma: {Utils.sum(x, y)}");
+                        }
+                        break;
+                    case 2:
+                        {
+                            Console.WriteLine("Entrar com um número para descobrir se é primo: ");
+                            int x = Utils.stoi(Utils.processInput(Console.ReadLine()));
+                            Utils.VerifyPrime(x);
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Inválido");
+                        break;
                 }
             }
-
-            string buf = "";
-            foreach(int mul in multiples) {
-                if (mul > 0) {
-                    buf += mul;
-                    buf += " - ";
-                }
-            }
-
-            if (buf.Length > 0) {
-                if (buf[^1] != ' ')
-                    Console.WriteLine(buf);
-                else 
-                    Console.WriteLine(buf[..^3]);
-            }
-
-            Container.CheckCapacity(num);
-
-            Container container = new Container(num);
-            
-            Console.WriteLine($"Container capacity: {container.GetCapacity()}");
-            container.AddToCapacity(num*2);
-            Console.WriteLine($"Container capacity: {container.GetCapacity()}");
-
-            Container.CheckCapacity(container.GetCapacity());
         }
     }
 }

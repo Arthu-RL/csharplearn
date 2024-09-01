@@ -2,16 +2,18 @@ using System;
 
 namespace utils
 {
-    public class Utils {
-        public static string processInput(string input) => input.Length > 0 ? input : "";
+    public static class Utils {
+        public static string processInput<T>(T input) => input != null ? input.ToString() ?? "" : "";
 
-        public static Func<string, int> stoi = input => input.Length > 0 ? Convert.ToInt32(input) : (int)0;
-    }
+        public static Func<string, int> stoi = input => input.Length > 0 ? Convert.ToInt32(input) : 0;
 
-    public class PrimeNumbers {
+        public static int sum(int x, int y) {
+            return x + y;
+        }
+
         public static bool VerifyPrime(int x)
         {
-            Console.Write("Put the number you want to discover if it is prime: ");
+            // Console.Write("Put the number you want to discover if it is prime: ");
 
             if (x < 2)
             {
